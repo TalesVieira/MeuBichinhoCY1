@@ -17,14 +17,34 @@ class BichinhoVirtual:
 
     def mostrar_ascii(self):
         print(f"\n{Cor.AZUL}Humor atual: {self.humor} | Personalidade: {self.personalidade}{Cor.RESET}")
+
         if self.humor == "Feliz":
-            print(Cor.VERDE + r"""  (\__/)  (｡♥‿♥｡) (___)__/""" + Cor.RESET)
+            print(Cor.VERDE + """
+          (\\__/)
+          ( ^‿^ )  ✨
+         / >🍎< \\ 
+        """ + Cor.RESET)
+
         elif self.humor == "Neutro":
-            print(Cor.AMARELO + r"""  (\__/)  (•_•)  (___)__/""" + Cor.RESET)
+            print(Cor.AMARELO + """
+          (\\__/)
+          ( -_- )
+         /  | |  \\ 
+        """ + Cor.RESET)
+
         elif self.humor == "Triste":
-            print(Cor.CINZA + r"""  (\__/)  (╥﹏╥) (___)__/""" + Cor.RESET)
+            print(Cor.CINZA + """
+          (\\__/)
+          ( T_T )
+         /︶︶︶\\
+        """ + Cor.RESET)
+
         elif self.humor == "Sem vida":
-            print(Cor.VERMELHO + r"""  (\__/)  (×_×)  (___)__/""" + Cor.RESET)
+            print(Cor.VERMELHO + """
+          (\\__/)
+          ( x_x )
+         /  RIP  \\ 
+        """ + Cor.RESET)
 
     def atualizar_humor(self):
         if self.saude <= 0 or self.energia <= 0:
@@ -84,7 +104,11 @@ class BichinhoVirtual:
         time.sleep(2)
         self.saude = min(100, self.saude + 10)
         self.humor = "Feliz"
-        print(Cor.CIANO + r"""  ~~~~~~ (•‿•)💧 /|   |\  |___|""" + Cor.RESET)
+        print(Cor.CIANO + r"""  ~~~~~~
+  (\•‿•)/ 💧
+  /|   |\
+   |___|
+""" + Cor.RESET)
         self.acoes += 1
         evento_aleatorio(self)
         verificar_conquistas(self.acoes)
@@ -109,7 +133,7 @@ class BichinhoVirtual:
         op = random.choice(["+", "-", "*"])
         resultado = eval(f"{a}{op}{b}")
         resp = input(f"Quanto é {a} {op} {b}? ")
-        if resp.isdigit() and int(resp) == resultado:
+        if resp.lstrip("-").isdigit() and int(resp) == resultado:
             print("Acertou!")
             self.humor = "Feliz" if self.personalidade == "Curioso" else "Neutro"
         else:
