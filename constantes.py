@@ -10,5 +10,12 @@ class Cor:
     CIANO = "\033[96m"
     CINZA = "\033[90m"
 
-COMIDAS_SAUDAVEIS = ["brócolis", "cenoura", "maçã"]
-COMIDAS_NAO_SAUDAVEIS = ["pizza", "sorvete", "hambúrguer"]
+# listas que determinam o efeito dos alimentos
+COMIDAS_SAUDAVEIS = ["brócolis", "cenoura", "maçã", "salada", "iogurte"]
+COMIDAS_NAO_SAUDAVEIS = ["pizza", "sorvete", "hambúrguer", "batata frita", "bolo"]
+
+# opções fixas (ou misturadas) que aparecem na geladeira
+GELADEIRA_PADRAO = [
+    "maçã", "pizza", "cenoura", "sorvete", "iogurte",
+    "hambúrguer", "brócolis", "batata frita", "salada", "bolo"
+]
